@@ -16,7 +16,7 @@ export interface LoggedUserResponse {
 })
 export class AuthService {
   private token: string | null = null;
-  private apiUrl = 'http://employee-backend-production-2132.up.railway.app/api/v1/auth';
+  private apiUrl = 'https://employee-backend-production-2132.up.railway.app/api/v1/auth';
   private userRoleSubject = new BehaviorSubject<string | null>(null); // Observable to share user role
 
   constructor(private http: HttpClient, private router: Router) {}
@@ -25,6 +25,7 @@ export class AuthService {
     return this.http.post<{ accessToken: string }>(`${this.apiUrl}/authenticate`, { email, password }).pipe(
       tap(response => {
         this.setToken(response.accessToken);
+          console.log("LOGIN RESPONSE:", response); // ✅ check this
         this.fetchUserRole(); // Fetch role after login
       }),
       catchError(this.handleError)
@@ -36,6 +37,7 @@ export class AuthService {
       tap(response => {
         if (role !== 'EMPLOYEE') {
           this.setToken(response.accessToken);
+          console.log(response.accessToken);
         }
         this.fetchUserRole(); // Fetch role after registration
       }),
@@ -63,6 +65,7 @@ export class AuthService {
   setToken(token: string): void {
     this.token = token;
     localStorage.setItem('accessToken', token);
+    console.log("TOKEN SAVED:" ,token);
   }
 
   getToken(): string | null {
@@ -70,6 +73,7 @@ export class AuthService {
       this.token = localStorage.getItem('accessToken');
     }
     return this.token;
+    //return localStorage.getItem('accessToken');
   }
 
   isLoggedIn(): boolean {
@@ -100,6 +104,8 @@ export class AuthService {
 
   getAuthHeaders(): HttpHeaders {
     const token = this.getToken();
+    console.log("TOKEN BEING SENT :" ,token);
+
     return new HttpHeaders({
       Authorization: `Bearer ${token}`
     });

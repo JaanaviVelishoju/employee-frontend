@@ -7,7 +7,7 @@ import { Leave } from '../models/leave';
   providedIn: 'root'
 })
 export class LeaveService {
-  private apiUrl = 'http://employee-backend-production-2132.up.railway.app/api/v1/leave'; // Replace with your backend API URL
+  private apiUrl = 'https://employee-backend-production-2132.up.railway.app/api/v1/leave'; // Replace with your backend API URL
 
   constructor(private http: HttpClient) { }
 

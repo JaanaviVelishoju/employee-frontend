@@ -7,7 +7,7 @@ import { Employee } from '../models/employee';
   providedIn: 'root'
 })
 export class EmployeeService {
-  private baseURL = "http://employee-backend-production-2132.up.railway.app/api/v1/employees";
+  private baseURL = "https://employee-backend-production-2132.up.railway.app/api/v1/employees";
 
   constructor(private httpClient: HttpClient) { }
 

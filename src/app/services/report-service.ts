@@ -7,7 +7,7 @@ import { Report } from '../models/report';
   providedIn: 'root'
 })
 export class ReportService {
-  private baseUrl = 'http://employee-backend-production-2132.up.railway.app/api/v1/report'; // Replace with your backend URL
+  private baseUrl = 'https://employee-backend-production-2132.up.railway.app/api/v1/report'; // Replace with your backend URL
 
   constructor(private http: HttpClient) { }
 

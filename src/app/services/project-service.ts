@@ -7,7 +7,7 @@ import { Project } from '../models/project';
   providedIn: 'root'
 })
 export class ProjectService {
-  private apiUrl = 'http://employee-backend-production-2132.up.railway.app/api/v1/project'; // Adjust the base URL to match your backend configuration
+  private apiUrl = 'https://employee-backend-production-2132.up.railway.app/api/v1/project'; // Adjust the base URL to match your backend configuration
 
   constructor(private http: HttpClient) { }
 

@@ -7,7 +7,7 @@ import { Task } from '../models/task';
   providedIn: 'root'
 })
 export class TaskService {
-  private apiUrl = 'http://employee-backend-production-2132.up.railway.app/api/v1/task'; // Adjust the base URL to match your backend configuration
+  private apiUrl = 'https://employee-backend-production-2132.up.railway.app/api/v1/task'; // Adjust the base URL to match your backend configuration
 
   constructor(private http: HttpClient) { }
 
