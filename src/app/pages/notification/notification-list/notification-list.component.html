@@ -35,8 +35,8 @@
               {{ notification.getFormattedDescription()?.message || 'No description available' }}
             </p>
             <p class="notification-dates">
-              <strong>From:</strong> {{ notification.getFormattedDescription()?.fromDate || 'N/A' }}
-              <strong>To:</strong> {{ notification.getFormattedDescription()?.toDate || 'N/A' }}
+              <strong>From:</strong> {{ notification.getFormattedDescription().fromDate || 'N/A' }}
+              <strong>To:</strong> {{ notification.getFormattedDescription().toDate || 'N/A' }}
             </p>
             <p class="mb-0 notification-status" *ngIf="!isAdmin">
               <i [ngClass]="getNotificationStatusClass(notification)"></i>
