@@ -18,7 +18,7 @@
 
 First, clone the repository where your Angular project is hosted:
 ```bash
-git clone https://github.com/kudzaiprichard/employee-management-system.git
+git clone https://github.com/JaanaviVelishoju/employee-frontend.git
 cd employee-management-system-main
 ```
 
